@@ -4,11 +4,11 @@
 //actions creators
 
 // init state
-const initState = {
+const initialState = {
   isLoggedIn:localStorage.getItem('jwt') || false,
 }
 // reducer
-function reducer(state=initState, action){
+function reducer(state=initialState, action){
   switch(action.type){
     default:
       return state
