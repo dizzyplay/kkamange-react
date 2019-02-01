@@ -417,6 +417,9 @@ module.exports = function(webpackEnv) {
               exclude: sassModuleRegex,
               use: getStyleLoaders(
                 {
+                  modules: true,
+                  camelCase: true,
+                  getLocalIdent: getCSSModuleLocalIdent,
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },

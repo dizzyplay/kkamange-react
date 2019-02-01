@@ -1,5 +1,7 @@
+@import '~reset-css/reset.css';
+
 body{
-  background: $bg;
+  background: $bg-color;
 }
 .main{
   display: flex;
