@@ -1,31 +1,38 @@
 import React from "react";
-import styles from "./styles.scss";
+import Facebook from 'react-ionicons/lib/LogoFacebook'
+import styles from './styles.scss';
+
 
 const LoginForm = (props) => {
   return (
-    <div>
-      <form>
-        <input type={'text'} placeholder={'Username'}/>
-        <input type={'password'} placeholder={'Password'}/>
-        <input type={'submit'} value={'Log in'}/>
+    <div className={styles.formComponent}>
+      <form className={styles.form}>
+        <input className={styles.textInput} type={'text'} placeholder={'Username'}/>
+        <input className={styles.textInput} type={'password'} placeholder={'Password'}/>
+        <input className={styles.brownButton} type={'submit'} value={'Log in'}/>
       </form>
-      <span>or</span>
-      <span>Log in with Facebook</span>
-      <span>Forgot password?</span>
+      <span>
+      Forgot password?
+      </span>
     </div>
   )
 };
 
 const SignUpForm = (props) => {
   return (
-    <div>
-      <form>
-        <input type={'email'} placeholder={'Email'}/>
-        <input type={'text'} placeholder={'Full Name'}/>
-        <input type={'username'} placeholder={'Username'}/>
-        <input type={'password'} placeholder={'Password'}/>
-        <input type={'submit'} value={'Sign up'}/>
+    <div className={styles.formComponent}>
+      <form className={styles.form}>
+        <input className={styles.textInput} type={'email'} placeholder={'Email'}/>
+        <input className={styles.textInput} type={'text'} placeholder={'Full Name'}/>
+        <input className={styles.textInput} type={'username'} placeholder={'Username'}/>
+        <input className={styles.textInput} type={'password'} placeholder={'Password'}/>
+        <input className={styles.brownButton} type={'submit'} value={'Sign up'}/>
       </form>
+      <span className={styles.divider}> or </span>
+      <button className={styles.greenButton}>
+        <Facebook fontSize={'20px'} color={'white'}/>
+        Login with NAVER
+      </button>
     </div>
   )
 }

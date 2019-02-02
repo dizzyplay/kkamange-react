@@ -1,35 +1,57 @@
-@mixin breakpoint($point){
-  @if $point == desktop{
-    @media (min-width:70em){
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
       @content;
     }
-  }
-  @else if $point == laptop {
-    @media (min-width:64em) {
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
       @content;
     }
-  }
-  @else if $point == tablet {
-    @media (min-width:50em) {
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
       @content;
     }
-  }
-  @else if $point == phablet {
-    @media (min-width:37.5em) {
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
       @content;
     }
-  }
-  @else if $point == mobileonly {
-    @media (max-width:37.5em) {
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
       @content;
     }
   }
 }
 
-@mixin borderBox($radius){
+@mixin border-box($radius) {
   border: 1px solid #e6e6e6;
   background-color: white;
-  @if $radius==yes{
+  @if $radius==yes {
     border-radius: 5px;
+  }
+}
+
+@mixin default-button($color) {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  @if $color==brown {
+    background-color: $dark-brown;
+  } @else if $color==green {
+    background-color: #3FC62A
+  } @else {
+    background-color: grey;
+  }
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $normal-font-size;
+  line-height: 26px;
+  cursor: pointer;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &:active {
+    opacity: 0.9;
   }
 }
