@@ -1,26 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Route, Switch} from 'react-router-dom';
 import Footer from 'components/Footer'
-import LoginForm from 'components/LoginForm'
+import Auth from 'components/Auth'
 import styles from './styles.scss'
 
-class App extends React.Component {
-  render() {
-    const {isLoggedIn} = this.props;
-    return (
-      <div className={styles.App}>
-        {isLoggedIn ? <PrivateRoutes/> : <PublicRoutes/>}
-        <Footer/>
-      </div>
-    )
-  }
-}
+const App = props => {
+  const {isLoggedIn} = props;
+  return (
+    <div className={styles.App}>
+      {isLoggedIn ? <PrivateRoutes key={2}/> : <PublicRoutes key={2}/>}
+      <Footer/>
+    </div>
+  )
+};
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 
 const PrivateRoutes = () => {
   return (
     <Switch>
-      <Route exact path={'/'} render={() => "login status"}/>
-      <Route path={'/profile'} render={() => "profile status"}/>
+      <Route key={'1'} exact path={'/'} render={() => "login status"}/>
+      <Route key={'2'} path={'/profile'} render={() => "profile status"}/>
     </Switch>
   )
 };
@@ -28,7 +31,7 @@ const PrivateRoutes = () => {
 const PublicRoutes = () => {
   return (
     <Switch>
-      <Route exact path={'/'} component={LoginForm}/>
+      <Route exact path={'/'} component={Auth}/>
     </Switch>
   )
 }
