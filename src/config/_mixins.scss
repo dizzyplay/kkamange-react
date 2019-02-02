@@ -33,14 +33,15 @@
 @mixin default-button($color) {
   -webkit-appearance: none;
   border-radius: 5px;
-  @if $color==brown {
-    background-color: $dark-brown;
+  @if $color==blue {
+    background-color: $dark-blue;
   } @else if $color==green {
     background-color: #3FC62A
   } @else {
     background-color: grey;
   }
   color: white;
+  border: 0;
   display: flex;
   justify-content: center;
   align-items: center;

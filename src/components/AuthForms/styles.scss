@@ -89,7 +89,7 @@
     }
   }
   .brown-button{
-    @include default-button(brown);
+    @include default-button(blue);
     svg{
       margin-right:10px;
     }

@@ -24,7 +24,7 @@
         width: 100%;
         .list-item{
           margin-right:15px;
-          color: $dark-blue;
+          color: $dark-black;
           cursor: pointer;
           @include breakpoint(mobileonly){
             margin: 15px;
