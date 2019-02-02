@@ -418,7 +418,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders(
                 {
                   modules: true,
-                  camelCase: true,
+                  camelCase: "dashes",
                   getLocalIdent: getCSSModuleLocalIdent,
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
@@ -445,7 +445,7 @@ module.exports = function(webpackEnv) {
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                   modules: true,
-                  camelCase: true,
+                  camelCase: "dashes",
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
                 {

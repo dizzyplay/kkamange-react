@@ -1,13 +1,12 @@
 @import '~reset-css/reset.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 
 body{
-  background: $bg-color;
+  background-color: $bg-color;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-.main{
+.App{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  .sub{
-    background-color: black;
-  }
+  flex-direction: column;
 }
