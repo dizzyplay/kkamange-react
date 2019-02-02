@@ -1,18 +1,11 @@
-import React from 'react';
-import LoginForm from "components/LoginForm";
-import Footer from "components/Footer";
-import styles from './styles.scss'
+import {connect} from 'react-redux';
+import Container from './container'
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <div className={styles.App}>
-        <LoginForm/>
-        <Footer/>
-      </div>
-    )
+const mapStateToProps = (state,ownProps)=>{
+  const {user} = state;
+  return{
+    isLoggedIn : user.isLoggedIn
   }
-}
+};
 
-export default App;
+export default connect(mapStateToProps)(Container)
