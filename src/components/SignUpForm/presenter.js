@@ -41,10 +41,8 @@ const SignUpForm = (props, context) => {
         />
       </form>
       <span className={formStyles.divider}> or </span>
-      <button
-        className={formStyles.greenButton}
-        onClick={props.handleSubmit}
-      >
+      {/*네이버 로그인*/}
+      <button className={formStyles.greenButton} >
         {context.t('Login with NAVER')}
       </button>
     </div>

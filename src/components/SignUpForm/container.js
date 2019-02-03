@@ -2,35 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SignUpForm from './presenter'
 
-class Container extends React.Component{
-  static contextTypes={
-    t:PropTypes.func.isRequired,
+class Container extends React.Component {
+  static contextTypes = {
+    t: PropTypes.func.isRequired,
   };
-  state={
-    email:'',
-    username:'',
-    pwd1:'',
-    pwd2:'',
+  state = {
+    email: '',
+    username: '',
+    pwd1: '',
+    pwd2: '',
   };
-  _handleInputChange = e=>{
-    const {value,name} = e.target;
-    this.setState({[name]:value});
-    console.log(value, name)
+  _handleInputChange = e => {
+    const {value, name} = e.target;
+    this.setState({[name]: value});
   };
-  _handleSubmit = e =>{
+  _handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state)
-    const {pwd1,pwd2} = this.state;
-    if(pwd1!==pwd2){
-      return(
+    const {pwd1, pwd2} = this.state;
+    if (pwd1 !== pwd2) {
+      return (
         alert(this.context.t('The password is different'))
       )
     }
     //need to redux action
-  }
-  render(){
+  };
+
+  render() {
     const {email, username, pwd1, pwd2} = this.state;
-    return(
+    return (
       <SignUpForm
         handleInputChange={this._handleInputChange}
         handleSubmit={this._handleSubmit}
