@@ -1,7 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SignUpForm from './presenter'
 
 class Container extends React.Component{
+  static contextTypes={
+    t:PropTypes.func.isRequired,
+  };
   state={
     email:'',
     username:'',
@@ -16,6 +20,12 @@ class Container extends React.Component{
   _handleSubmit = e =>{
     e.preventDefault();
     console.log(this.state)
+    const {pwd1,pwd2} = this.state;
+    if(pwd1!==pwd2){
+      return(
+        alert(this.context.t('The password is different'))
+      )
+    }
     //need to redux action
   }
   render(){

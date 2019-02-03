@@ -14,6 +14,7 @@ export const translations = {
     'Username': '유저명',
     'Check Password': '비밀번호 확인',
     'Login with NAVER': '네이버로 로그인 하기',
+    'The password is different' : '패스워드가 다릅니다'
   },
   'options': {
   },
