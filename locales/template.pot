@@ -1,0 +1,53 @@
+#: src/components/Auth/presenter.js
+#: src/components/AuthForms/index.js
+msgid "Sign up"
+msgstr ""
+
+#: src/components/Auth/presenter.js
+msgid "You have account already?"
+msgstr ""
+
+#: src/components/Auth/presenter.js
+msgid "Login"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Username"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Password"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Log in"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Forgot password?"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Email"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Full Name"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Login with NAVER"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "About us"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Privacy"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Terms"
+msgstr ""
+
