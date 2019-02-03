@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import styles from "./styles.scss";
 import {LoginForm, SignUpForm} from 'components/AuthForms'
 
@@ -18,13 +19,17 @@ const Auth = (props, context) => (
         {props.action === 'login' ?
           (
             <p>
-              <span className={styles.changeLink} onClick={props.changeAction}>Sign up</span>
+              <span className={styles.changeLink} onClick={props.changeAction}>
+                {context.t('Sign up')}
+              </span>
             </p>
           ) :
           (
             <p>
-              You have account already?
-              <span className={styles.changeLink} onClick={props.changeAction}>Login</span>
+              {context.t('You have account already?')}
+              <span className={styles.changeLink} onClick={props.changeAction}>
+                  {context.t('Login')}
+              </span>
             </p>
           )
         }
@@ -33,5 +38,8 @@ const Auth = (props, context) => (
   </div>
 );
 
+Auth.contextTypes = {
+  t:PropTypes.func.isRequired,
+};
 
 export default Auth;
