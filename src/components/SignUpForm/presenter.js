@@ -3,24 +3,64 @@ import PropTypes from 'prop-types';
 import formStyles from 'shared/formStyles.scss';
 
 const SignUpForm = (props, context) => {
+  const { emailValue, usernameValue, pwd1Value, pwd2Value} = props;
   return (
     <div className={formStyles.formComponent}>
       <form className={formStyles.form}>
-        <input className={formStyles.textInput} type={'email'} placeholder={context.t('Email')}/>
-        <input className={formStyles.textInput} type={'username'} placeholder={context.t('Username')}/>
-        <input className={formStyles.textInput} type={'password'} placeholder={context.t('Password')}/>
-        <input className={formStyles.textInput} type={'password'} placeholder={context.t('Check Password')}/>
-        <input className={formStyles.brownButton} type={'submit'} value={context.t('Sign up')}/>
+        <input onChange={props.handleInputChange}
+               className={formStyles.textInput}
+               value={emailValue}
+               type={'text'}
+               name={'email'}
+               placeholder={context.t('Email')}
+        />
+        <input onChange={props.handleInputChange}
+               className={formStyles.textInput}
+               value={usernameValue}
+               type={'text'}
+               name={'username'}
+               placeholder={context.t('Username')}
+        />
+        <input onChange={props.handleInputChange}
+               className={formStyles.textInput}
+               value={pwd1Value}
+               type={'password'}
+               name={'pwd1'}
+               placeholder={context.t('Password')}
+        />
+        <input onChange={props.handleInputChange}
+               className={formStyles.textInput}
+               value={pwd2Value}
+               type={'password'}
+               name={'pwd2'}
+               placeholder={context.t('Check Password')}
+        />
+        <input onClick={props.handleSubmit}
+               className={formStyles.brownButton}
+               type={'submit'} value={context.t('Sign up')}
+        />
       </form>
       <span className={formStyles.divider}> or </span>
-      <button className={formStyles.greenButton}>
+      <button
+        className={formStyles.greenButton}
+        onClick={props.handleSubmit}
+      >
         {context.t('Login with NAVER')}
       </button>
     </div>
   )
 };
-SignUpForm.contextTypes ={
-  t:PropTypes.func.isRequired,
+
+SignUpForm.propTypes = {
+  emailValue: PropTypes.string.isRequired,
+  usernameValue: PropTypes.string.isRequired,
+  pwd1Value: PropTypes.string.isRequired,
+  pwd2Value: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+}
+SignUpForm.contextTypes = {
+  t: PropTypes.func.isRequired,
 };
 
 export default SignUpForm;
