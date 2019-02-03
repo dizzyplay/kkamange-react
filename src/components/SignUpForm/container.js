@@ -1,6 +1,20 @@
 import React from 'react';
 import SignUpForm from './presenter'
 
-const Container = (props) => <SignUpForm {...props}/>;
+class Container extends React.Component{
+  state={
+    email:'',
+    username:'',
+    
+  }
+  _handleInputChange = e=>{
+  }
+  render(){
+    return(
+      <SignUpForm
+      />
+    )
+  }
+}
 
 export default Container;

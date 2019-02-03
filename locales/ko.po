@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Language: ko"
 #: src/components/Auth/presenter.js
-#: src/components/AuthForms/index.js
+#: src/components/SignUpForm/presenter.js
 msgid "Sign up"
 msgstr "회원가입"
 
@@ -14,37 +14,9 @@ msgstr "계정이 이미 있으신가요?"
 msgid "Login"
 msgstr "로그인"
 
-#: src/components/AuthForms/index.js
-msgid "Username"
-msgstr "유저명"
-
-#: src/components/AuthForms/index.js
-msgid "Password"
-msgstr "비밀번호"
-
-#: src/components/AuthForms/index.js
-msgid "Log in"
-msgstr "로그인"
-
-#: src/components/AuthForms/index.js
-msgid "Forgot password?"
-msgstr "비밀번호를 잊으셨나요?"
-
-#: src/components/AuthForms/index.js
-msgid "Email"
-msgstr "이메일"
-
-#: src/components/AuthForms/index.js
-msgid "Full Name"
-msgstr "성명"
-
-#: src/components/AuthForms/index.js
-msgid "Login with NAVER"
-msgstr "네이버로 로그인하기"
-
 #: src/components/Footer/index.js
 msgid "About us"
-msgstr "회사"
+msgstr "정보"
 
 #: src/components/Footer/index.js
 msgid "Privacy"
@@ -53,4 +25,40 @@ msgstr "개인정보보호"
 #: src/components/Footer/index.js
 msgid "Terms"
 msgstr "약관"
+
+#: src/components/LoginForm/presenter.js
+msgid "username"
+msgstr "유저명"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignUpForm/presenter.js
+msgid "Password"
+msgstr "비밀번호"
+
+#: src/components/LoginForm/presenter.js
+msgid "Log in"
+msgstr "로그인"
+
+#: src/components/LoginForm/presenter.js
+msgid "Forgot password?"
+msgstr "비밀번호를 잊으셨나요?"
+
+#: src/components/SignUpForm/presenter.js
+msgid "Email"
+msgstr "이메일"
+
+#: src/components/SignUpForm/presenter.js
+msgid "Username"
+msgstr "유저명"
+
+#: src/components/SignUpForm/presenter.js
+msgid "Check Password"
+msgstr "비밀번호 확인"
+
+#: src/components/SignUpForm/presenter.js
+msgid "Login with NAVER"
+msgstr "네이버로 로그인 하기"
+
+
+
 

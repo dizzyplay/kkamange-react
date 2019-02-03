@@ -7,9 +7,9 @@ const SignUpForm = (props, context) => {
     <div className={formStyles.formComponent}>
       <form className={formStyles.form}>
         <input className={formStyles.textInput} type={'email'} placeholder={context.t('Email')}/>
-        <input className={formStyles.textInput} type={'text'} placeholder={context.t('Full Name')}/>
         <input className={formStyles.textInput} type={'username'} placeholder={context.t('Username')}/>
         <input className={formStyles.textInput} type={'password'} placeholder={context.t('Password')}/>
+        <input className={formStyles.textInput} type={'password'} placeholder={context.t('Check Password')}/>
         <input className={formStyles.brownButton} type={'submit'} value={context.t('Sign up')}/>
       </form>
       <span className={formStyles.divider}> or </span>

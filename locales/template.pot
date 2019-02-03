@@ -1,5 +1,5 @@
 #: src/components/Auth/presenter.js
-#: src/components/AuthForms/index.js
+#: src/components/SignUpForm/presenter.js
 msgid "Sign up"
 msgstr ""
 
@@ -9,34 +9,6 @@ msgstr ""
 
 #: src/components/Auth/presenter.js
 msgid "Login"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Username"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Password"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Log in"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Forgot password?"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Email"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Full Name"
-msgstr ""
-
-#: src/components/AuthForms/index.js
-msgid "Login with NAVER"
 msgstr ""
 
 #: src/components/Footer/index.js
@@ -49,5 +21,38 @@ msgstr ""
 
 #: src/components/Footer/index.js
 msgid "Terms"
+msgstr ""
+
+#: src/components/LoginForm/presenter.js
+msgid "username"
+msgstr ""
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignUpForm/presenter.js
+msgid "Password"
+msgstr ""
+
+#: src/components/LoginForm/presenter.js
+msgid "Log in"
+msgstr ""
+
+#: src/components/LoginForm/presenter.js
+msgid "Forgot password?"
+msgstr ""
+
+#: src/components/SignUpForm/presenter.js
+msgid "Email"
+msgstr ""
+
+#: src/components/SignUpForm/presenter.js
+msgid "Username"
+msgstr ""
+
+#: src/components/SignUpForm/presenter.js
+msgid "PasswordCheck"
+msgstr ""
+
+#: src/components/SignUpForm/presenter.js
+msgid "Login with NAVER"
 msgstr ""
 

@@ -21,7 +21,12 @@ const LoginForm = (props, context) => {
           value={props.pwdValue}
           name={"pwd"}
           placeholder={context.t("Password")}/>
-        <input className={formStyles.brownButton} type={'submit'} value={context.t("Log in")}/>
+        <input
+          className={formStyles.brownButton}
+          type={'submit'}
+          onClick={props.handleSubmit}
+          value={context.t("Log in")}
+        />
       </form>
       <span>
         {context.t("Forgot password?")}
@@ -33,6 +38,7 @@ LoginForm.propTypes ={
   usernameValue: PropTypes.string.isRequired,
   pwdValue: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  handleSubmit:PropTypes.func.isRequired,
 };
 LoginForm.contextTypes ={
   t:PropTypes.func.isRequired,
