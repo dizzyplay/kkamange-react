@@ -9,6 +9,7 @@ class Container extends React.Component {
   };
   static propTypes = {
     naverLogin: PropTypes.func.isRequired,
+    usernameLogin: PropTypes.func.isRequired,
   };
   _handleChange = (e) => {
     const {value, name} = e.target;
@@ -16,8 +17,11 @@ class Container extends React.Component {
   };
   _handleSubmit = (e) => {
     e.preventDefault();
+    const {usernameLogin} = this.props;
     const {username, pwd} = this.state;
     console.log(username, pwd)
+    usernameLogin(username,pwd);
+
     // need redux action
   };
   _handleNaverLogin = ()=>{

@@ -31,6 +31,29 @@ function naverLogin(access_token){
   }
 }
 
+const usernameLogin = (username, pwd)=>{
+  return dispatch=>{
+    fetch('/rest-auth/login/',{
+      method:'post',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        username:username,
+        password:pwd,
+      })
+    })
+      .then(res=>res.json())
+      .then(json=>{
+        if(json.token){
+          localStorage.setItem('jwt',json.token);
+          dispatch(saveToken(json.token));
+        }
+      })
+      .catch(err=>console.log(err))
+  }
+};
+
 // init state
 const initialState = {
   isLoggedIn:localStorage.getItem('jwt') ? true : false,
@@ -49,17 +72,18 @@ function reducer(state=initialState, action){
 //reducer func
 const applySetToken = (state,action)=>{
   const {token} = action;
-  console.log(action)
+  console.log(token)
   return {
     ...state,
     isLoggedIn: true,
     token
   }
-}
+};
 
 //export
 const actionCreators = {
   naverLogin,
+  usernameLogin
 };
 
 export {actionCreators};
