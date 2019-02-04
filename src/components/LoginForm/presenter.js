@@ -31,6 +31,14 @@ const LoginForm = (props, context) => {
       <span>
         {context.t("Forgot password?")}
       </span>
+      <span className={formStyles.divider}> or </span>
+      {/*네이버 로그인*/}
+      <button
+        className={formStyles.greenButton}
+        onClick={props.handleNaverLogin}
+      >
+        {context.t('Login with NAVER')}
+      </button>
     </div>
   )
 };
@@ -39,6 +47,7 @@ LoginForm.propTypes ={
   pwdValue: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit:PropTypes.func.isRequired,
+  handleNaverLogin:PropTypes.func.isRequired,
 };
 LoginForm.contextTypes ={
   t:PropTypes.func.isRequired,

@@ -40,11 +40,7 @@ const SignUpForm = (props, context) => {
                type={'submit'} value={context.t('Sign up')}
         />
       </form>
-      <span className={formStyles.divider}> or </span>
-      {/*네이버 로그인*/}
-      <button className={formStyles.greenButton} >
-        {context.t('Login with NAVER')}
-      </button>
+
     </div>
   )
 };
