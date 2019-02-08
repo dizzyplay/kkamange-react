@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import formStyles from 'shared/formStyles.scss'
+import formStyles from 'shared/formStyles.scss';
+import NaverLogin from 'components/NaverLogin';
 
 const LoginForm = (props, context) => {
   return (
@@ -32,13 +33,9 @@ const LoginForm = (props, context) => {
         {context.t("Forgot password?")}
       </span>
       <span className={formStyles.divider}> or </span>
-      {/*네이버 로그인*/}
-      <button
-        className={formStyles.greenButton}
-        onClick={props.handleNaverLogin}
-      >
-        {context.t('Login with NAVER')}
-      </button>
+      <NaverLogin
+        handleCallback={props.handleNaverLogin}
+      />
     </div>
   )
 };

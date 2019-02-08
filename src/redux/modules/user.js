@@ -72,7 +72,6 @@ function reducer(state=initialState, action){
 //reducer func
 const applySetToken = (state,action)=>{
   const {token} = action;
-  console.log(token)
   return {
     ...state,
     isLoggedIn: true,

@@ -24,10 +24,7 @@ class Container extends React.Component {
 
     // need redux action
   };
-  _handleNaverLogin = ()=>{
-    console.log('naver');
-    const token='AAAAOWClyj16AG797DHnNmbdX0GJ8WBqFsRtnOmSt0U0PH3QVXOgoAow9NXuV1OWTI4QvL1o6Wzv6A8Q4G2FKzrlysM=';
-    console.log(token)
+  _handleNaverLogin = (token)=>{
     const {naverLogin} = this.props;
     naverLogin(token)
   };
