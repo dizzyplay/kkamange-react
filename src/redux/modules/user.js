@@ -27,7 +27,7 @@ function naverLogin(access_token){
           dispatch(saveToken(json.token))
         }
       })
-      .catch(err=>console.log(err))
+      .catch(err=>alert("로그인중 오류가 발생했습니다.\n"+err))
   }
 }
 

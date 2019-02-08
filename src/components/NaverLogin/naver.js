@@ -49,14 +49,11 @@ class NaverLogin extends React.Component {
 
   render() {
     return (
-      <div>
-        <button className={formStyles.dummyButton} onClick={this.handleClick}>
-          <img width={'200px'} src={require('images/naver_login.png')} alt={'naver_login'}/>
-        </button>
-      </div>
+      <button className={formStyles.dummyButton} onClick={this.handleClick}>
+        <img width={'200px'} src={require('images/naver_login.png')} alt={'naver_login'}/>
+      </button>
     )
   }
-
 }
 
 export default NaverLogin;
