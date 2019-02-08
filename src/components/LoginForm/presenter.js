@@ -35,6 +35,8 @@ const LoginForm = (props, context) => {
       <span className={formStyles.divider}> or </span>
       <NaverLogin
         handleCallback={props.handleNaverLogin}
+        client_id={'t8XOFusguQbsx30UsAnl'}
+        redirect_uri={'http://localhost:3000/callback/'}
       />
     </div>
   )

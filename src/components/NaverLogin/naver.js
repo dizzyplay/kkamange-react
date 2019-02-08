@@ -1,14 +1,19 @@
-import React from 'react'
-import formStyles from 'shared/formStyles.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import formStyles from 'shared/formStyles.scss';
 
 class NaverLogin extends React.Component {
   state = {
     access_token: '',
   };
+  static propTypes = {
+    client_id: PropTypes.string.isRequired,
+    redirect_url: PropTypes.string.isRequired,
+  };
   param = {
     response_type: 'token',
-    client_id: 't8XOFusguQbsx30UsAnl',
-    redirect_uri: 'http://localhost:3000/callback/',
+    client_id: this.props.client_id,
+    redirect_uri: this.props.redirect_uri,
     state: 'mynaverstate',
   };
   objectToParams = params => '?' + Object.keys(params)
@@ -27,8 +32,8 @@ class NaverLogin extends React.Component {
     );
   };
   handleClick = () => {
-    const url = "https://nid.naver.com/oauth2.0/authorize/" + this.objectToParams(this.param);
-    const myWindow = window.open(url, "", "width=400,height=500");
+    const request_uri = "https://nid.naver.com/oauth2.0/authorize/" + this.objectToParams(this.param);
+    const myWindow = window.open(request_uri, "", "width=400,height=500");
     const timeId = setInterval(() => {
       try {
         const toDecode = myWindow.location.hash;
