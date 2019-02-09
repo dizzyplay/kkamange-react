@@ -8,7 +8,8 @@ class NaverLogin extends React.Component {
   };
   static propTypes = {
     client_id: PropTypes.string.isRequired,
-    redirect_url: PropTypes.string.isRequired,
+    redirect_uri: PropTypes.string.isRequired,
+    handleCallback: PropTypes.func.isRequired,
   };
   param = {
     response_type: 'token',
