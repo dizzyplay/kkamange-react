@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import formStyles from 'shared/formStyles.scss';
 
 const SignUpForm = (props, context) => {
-  const { emailValue, usernameValue, pwd1Value, pwd2Value} = props;
+  const { emailValue,nicknameValue, usernameValue, pwd1Value, pwd2Value} = props;
   return (
     <div className={formStyles.formComponent}>
       <form className={formStyles.form}>
@@ -19,20 +19,27 @@ const SignUpForm = (props, context) => {
                value={usernameValue}
                type={'text'}
                name={'username'}
-               placeholder={context.t('Username')}
+               placeholder={'ID'}
+        />
+        <input onChange={props.handleInputChange}
+               className={formStyles.textInput}
+               value={nicknameValue}
+               type={'text'}
+               name={'nickname'}
+               placeholder={'Nickname'}
         />
         <input onChange={props.handleInputChange}
                className={formStyles.textInput}
                value={pwd1Value}
                type={'password'}
-               name={'pwd1'}
+               name={'password1'}
                placeholder={context.t('Password')}
         />
         <input onChange={props.handleInputChange}
                className={formStyles.textInput}
                value={pwd2Value}
                type={'password'}
-               name={'pwd2'}
+               name={'password2'}
                placeholder={context.t('Check Password')}
         />
         <input onClick={props.handleSubmit}
@@ -48,6 +55,7 @@ const SignUpForm = (props, context) => {
 SignUpForm.propTypes = {
   emailValue: PropTypes.string.isRequired,
   usernameValue: PropTypes.string.isRequired,
+  nicknameValue: PropTypes.string.isRequired,
   pwd1Value: PropTypes.string.isRequired,
   pwd2Value: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,

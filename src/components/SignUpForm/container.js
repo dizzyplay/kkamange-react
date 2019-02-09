@@ -6,11 +6,15 @@ class Container extends React.Component {
   static contextTypes = {
     t: PropTypes.func.isRequired,
   };
+  static propTypes = {
+    userSignup: PropTypes.func.isRequired,
+  };
   state = {
     email: '',
     username: '',
-    pwd1: '',
-    pwd2: '',
+    nickname:'',
+    password1: '',
+    password2: '',
   };
   _handleInputChange = e => {
     const {value, name} = e.target;
@@ -18,25 +22,29 @@ class Container extends React.Component {
   };
   _handleSubmit = e => {
     e.preventDefault();
-    const {pwd1, pwd2} = this.state;
-    if (pwd1 !== pwd2) {
+    const {email, username, nickname, password1, password2} = this.state;
+    const {userSignup} = this.props;
+    if (password1 !== password2) {
       return (
         alert(this.context.t('The password is different'))
       )
     }
     //need to redux action
+    console.log(email,username,nickname,password1,password2)
+    userSignup(this.state)
   };
 
   render() {
-    const {email, username, pwd1, pwd2} = this.state;
+    const {email,nickname, username, password1, password2} = this.state;
     return (
       <SignUpForm
         handleInputChange={this._handleInputChange}
         handleSubmit={this._handleSubmit}
         emailValue={email}
         usernameValue={username}
-        pwd1Value={pwd1}
-        pwd2Value={pwd2}
+        nicknameValue={nickname}
+        pwd1Value={password1}
+        pwd2Value={password2}
       />
     )
   }

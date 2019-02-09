@@ -31,6 +31,32 @@ function naverLogin(access_token){
   }
 }
 
+const userSignup = ({username,email,nickname,password1,password2})=>{
+  return dispatch=>{
+    fetch('/rest-auth/registration/',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        username,
+        email,
+        nickname,
+        password1,
+        password2
+      })
+    })
+      .then(res=>res.json())
+      .then(json=>{
+        if(json.token){
+          localStorage.setItem('jwt',json.token);
+          dispatch(saveToken(json.token))
+        }
+      })
+      .catch(err=>console.log(err))
+  }
+};
+
 const usernameLogin = (username, pwd)=>{
   return dispatch=>{
     fetch('/rest-auth/login/',{
@@ -82,7 +108,8 @@ const applySetToken = (state,action)=>{
 //export
 const actionCreators = {
   naverLogin,
-  usernameLogin
+  usernameLogin,
+  userSignup,
 };
 
 export {actionCreators};
