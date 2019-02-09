@@ -49,7 +49,6 @@ const userSignup = ({username,email,nickname,password1,password2})=>{
       .then(res=>res.json())
       .then(json=>{
         if(json.token){
-          localStorage.setItem('jwt',json.token);
           dispatch(saveToken(json.token))
         }
       })
@@ -72,7 +71,6 @@ const usernameLogin = (username, pwd)=>{
       .then(res=>res.json())
       .then(json=>{
         if(json.token){
-          localStorage.setItem('jwt',json.token);
           dispatch(saveToken(json.token));
         }
       })
@@ -98,6 +96,7 @@ function reducer(state=initialState, action){
 //reducer func
 const applySetToken = (state,action)=>{
   const {token} = action;
+  localStorage.setItem('jwt',token);
   return {
     ...state,
     isLoggedIn: true,
