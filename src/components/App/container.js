@@ -1,6 +1,13 @@
 import React from 'react'
 import App from './presenter'
 
-const Container = props => <App {...props} />;
+class Container extends React.Component{
+  render(){
+    return(
+      <App
+        {...this.props} />
+    )
+  }
+}
 
 export default Container

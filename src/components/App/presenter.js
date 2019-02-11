@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import {Route, Switch} from 'react-router-dom';
 import Footer from 'components/Footer'
 import Auth from 'components/Auth'
+import Feed from 'components/Feed';
 import './styles.scss'
 
 const App = props => [
-  props.isLoggedIn ? <PrivateRoutes key={2}/> : <PublicRoutes key={2}/>,
+  props.isLoggedIn ? <PrivateRoutes key={2} /> : <PublicRoutes key={2}/>,
     <Footer key={3}/>
 ];
 
@@ -17,8 +18,8 @@ App.propTypes = {
 const PrivateRoutes = () => {
   return (
     <Switch>
-      <Route key={'1'} exact path={'/'} render={() => "login status"}/>
-      <Route key={'2'} path={'/profile'} render={() => "profile status"}/>
+      <Route exact path={'/'} component={Feed}/>
+      <Route path={'/profile'} render={() => "profile status"}/>
     </Switch>
   )
 };
