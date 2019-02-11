@@ -1,0 +1,16 @@
+.feed-photo{
+  @include borderBox(yes);
+  width: 100%;
+  max-width: $max-card-width;
+  margin-bottom: 80px;
+  height: 100%;
+  padding:10px;
+  .image {
+    width:100%;
+    margin: auto 0;
+  }
+  .comments{
+    display:flex;
+    flex-direction: column;
+  }
+}

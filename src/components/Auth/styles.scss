@@ -10,7 +10,7 @@
   text-transform: uppercase;
   .row {
     .whiteBox {
-      @include border-box(no);
+      @include borderBox(no);
       display: flex;
       flex-direction: column;
       align-items: center;

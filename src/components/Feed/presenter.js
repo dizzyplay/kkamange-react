@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PhotoDisplay from 'components/PhotoDisplay';
+import FeedPhoto from 'components/FeedPhoto';
+import styles from './styles.scss'
 
 const Feed = props=>{
   // 렌더링이 여러번 일어나는 이유 찾아보기
@@ -8,9 +9,11 @@ const Feed = props=>{
     return <LoadingFeed/>;
   }else if (props.feed){
     return(
-      <div>{props.feed.map(item=>
-        <PhotoDisplay img={item.photo} key={item.id}/>
-      )}</div>
+      <div className={styles.feed}>
+        {props.feed.map(photo=>
+        <FeedPhoto {...photo} key={photo.id}/>
+      )}
+      </div>
     )
   }
 };
