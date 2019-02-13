@@ -4,9 +4,11 @@ import {Route, Switch} from 'react-router-dom';
 import Footer from 'components/Footer'
 import Auth from 'components/Auth'
 import Feed from 'components/Feed';
+import Navi from 'components/Navigation';
 import './styles.scss'
 
 const App = props => [
+  <Navi/>,
   props.isLoggedIn ? <PrivateRoutes key={2} /> : <PublicRoutes key={2}/>,
     <Footer key={3}/>
 ];
