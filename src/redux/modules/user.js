@@ -12,18 +12,36 @@ const saveToken = token =>{
   }
 };
 
-const saveUser = user =>{
+const saveUser = data =>{
+  console.log(data)
   return{
     type:SAVE_USER,
-    user
+    token:data.token,
+    username:data.username
   }
-}
+};
 const logout = ()=>{
   return{
     type:LOGOUT,
   }
 };
 // API actions
+function getUserInformation(){
+  const token = localStorage.getItem('jwt')
+  return dispatch=>{
+    fetch('/api-token-verify/',{
+      method:'post',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        token
+      })
+    })
+      .then(res=>res.json())
+      .then(json=>dispatch(saveUser(json)))
+  }
+}
 function naverLogin(access_token){
   return dispatch=>{
     fetch('/rest-auth/naver/',{
@@ -101,12 +119,15 @@ const usernameLogin = (username, password)=>{
 // init state
 const initialState = {
   isLoggedIn:localStorage.getItem('jwt') ? true : false,
-  token: localStorage.getItem('jwt')
+  token: localStorage.getItem('jwt'),
+  username:''
 };
 
 // reducer
 function reducer(state=initialState, action){
   switch(action.type){
+    case SAVE_USER:
+      return applyUserInformation(state,action);
     case SAVE_TOKEN:
       return applySetToken(state,action);
     case LOGOUT:
@@ -117,6 +138,14 @@ function reducer(state=initialState, action){
 }
 
 //reducer func
+const applyUserInformation = (state, action)=>{
+  const {username} = action;
+  return{
+    ...state,
+    username
+  }
+};
+
 const applySetToken = (state,action)=>{
   const {token} = action;
   localStorage.setItem('jwt',token);
@@ -135,6 +164,7 @@ const applyLogout = (state,action)=>{
 };
 //export
 const actionCreators = {
+  getUserInformation,
   naverLogin,
   usernameLogin,
   userSignup,
