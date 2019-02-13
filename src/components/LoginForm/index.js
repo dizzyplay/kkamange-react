@@ -7,8 +7,8 @@ const mapDispatchToProps = (dispatch, ownProps)=>{
     naverLogin:(access_token)=>{
       dispatch(userActions.naverLogin(access_token))
     },
-    usernameLogin:(username,pwd)=>{
-      dispatch(userActions.usernameLogin(username,pwd))
+    usernameLogin:(username,password)=>{
+      dispatch(userActions.usernameLogin(username,password))
     }
   }
 };

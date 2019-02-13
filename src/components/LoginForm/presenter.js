@@ -10,6 +10,7 @@ const LoginForm = (props, context) => {
         <input
           className={formStyles.textInput}
           type={'text'}
+          autoComplete={'username'}
           onChange={props.handleChange}
           value={props.usernameValue}
           name="username"
@@ -18,9 +19,10 @@ const LoginForm = (props, context) => {
         <input
           className={formStyles.textInput}
           type={'password'}
+          autoComplete={'current-password'}
           onChange={props.handleChange}
           value={props.pwdValue}
-          name={"pwd"}
+          name={"password"}
           placeholder={context.t("Password")}/>
         <input
           className={formStyles.brownButton}

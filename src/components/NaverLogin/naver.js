@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import formStyles from 'shared/formStyles.scss';
+import styles from './styles.scss';
 
 class NaverLogin extends React.Component {
   state = {
@@ -55,9 +55,12 @@ class NaverLogin extends React.Component {
 
   render() {
     return (
-      <button className={formStyles.dummyButton} onClick={this.handleClick}>
-        <img width={'200px'} src={require('images/naver_login.png')} alt={'naver_login'}/>
-      </button>
+        <img width={'200px'}
+             className={styles.imgBtn}
+             src={require('images/naver_login.png')}
+             alt={'naver_login'}
+             onClick={this.handleClick}
+        />
     )
   }
 }

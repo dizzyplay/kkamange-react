@@ -5,7 +5,7 @@ import LoginForm from './presenter'
 class Container extends React.Component {
   state = {
     username: '',
-    pwd: '',
+    password: '',
   };
   static propTypes = {
     naverLogin: PropTypes.func.isRequired,
@@ -18,9 +18,9 @@ class Container extends React.Component {
   _handleSubmit = (e) => {
     e.preventDefault();
     const {usernameLogin} = this.props;
-    const {username, pwd} = this.state;
-    console.log(username, pwd)
-    usernameLogin(username,pwd);
+    const {username, password} = this.state;
+    console.log(username, password)
+    usernameLogin(username,password);
 
     // need redux action
   };
@@ -30,11 +30,11 @@ class Container extends React.Component {
   };
 
   render() {
-    const {username, pwd} = this.state;
+    const {username, password} = this.state;
     return (
       <LoginForm
         usernameValue={username}
-        pwdValue={pwd}
+        pwdValue={password}
         handleChange={this._handleChange}
         handleSubmit={this._handleSubmit}
         handleNaverLogin={this._handleNaverLogin}
