@@ -2,6 +2,7 @@
 //actions
 const SAVE_TOKEN = 'SAVE_TOKEN';
 const LOGOUT = 'LOGOUT';
+const SAVE_USER = 'SAVE_USER';
 
 //actions creators
 const saveToken = token =>{
@@ -11,6 +12,12 @@ const saveToken = token =>{
   }
 };
 
+const saveUser = user =>{
+  return{
+    type:SAVE_USER,
+    user
+  }
+}
 const logout = ()=>{
   return{
     type:LOGOUT,
