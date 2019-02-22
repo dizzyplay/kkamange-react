@@ -1,11 +1,10 @@
-import React from 'react';
-import UserInfo from 'components/UserInfo';
-import styles from './styles.scss'
+import {connect} from 'react-redux'
+import Container from './container'
+import {actionCreators} from 'redux/modules/user'
 
-const Navigation = ()=>(
-  <div className={styles.topNavigation}>
-    <UserInfo/>
-  </div>
-);
-
-export default Navigation;
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    logout:()=>{dispatch(actionCreators.logout())}
+  }
+};
+export default connect(null,mapDispatchToProps)(Container)
